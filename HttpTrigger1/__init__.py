@@ -26,7 +26,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         blob_client = blob_service_client.get_blob_client(container='pytesting', blob='demo.txt' )
         with open("demo.txt",'rb') as f:blob_client.upload_blob(f)
-        return func.HttpResponse("success",status_code=200)
+        return ("success")
     except Exception as e:
-        return func.HttpResponse(str(e),status_code=200)
+        return str(e)
 
